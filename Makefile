@@ -1,5 +1,5 @@
 fbkeyboard: fbkeyboard.c
-	gcc -o fbkeyboard $(shell freetype-config --cflags) $(shell freetype-config --libs) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) fbkeyboard.c
+	gcc -o fbkeyboard fbkeyboard.c $(shell pkg-config freetype2 --cflags --libs) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
 
 clean:
 	rm -f fbkeyboard

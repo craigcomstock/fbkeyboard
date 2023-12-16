@@ -134,6 +134,8 @@ int main(int argc, char *argv[]) {
     perror("error: reading variable framebuffer information");
     exit(-1);
   }
+// check rotate and adjust everything accordingly, same for gesture :)
+printf("vinfo.yres=%d, vinfo.xres=%d\n", vinfo.yres, vinfo.xres);
   hight = (vinfo.yres/3+vinfo.xres/2)/10;//hight of one row
 
   if (FT_Init_FreeType(&library)) {
