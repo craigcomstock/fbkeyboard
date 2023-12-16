@@ -17,3 +17,6 @@ usefull tips:
 use stty to adjust the console size to avoid overlapping the console and the kayboard.
 stty rows <number-of-rows>
 
+Sat Dec 16 09:17:07 CST 2023
+alpine, error: sending uinput event, group perms?
+sudo modprobe uinput
