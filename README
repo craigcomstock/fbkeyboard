@@ -20,3 +20,17 @@ stty rows <number-of-rows>
 Sat Dec 16 09:17:07 CST 2023
 alpine, error: sending uinput event, group perms?
 sudo modprobe uinput
+vinfo.yres=768, vinfo.xres=1366
+error: cannot open uinput device /dev/uinput: No such file or directory
+error: SET_EVBIT EV_KEY: Bad file descriptor
+error: SET_EVBIT EV_SYN: Bad file descriptor
+error setting up uinput
+error creating uinput dev: Bad file descriptor
+
+so have to run as root to use uinput and doesnt find the right device as well
+on x220 would need to look for finger :)
+output of evtest:
+/dev/input/event5:	Wacom ISDv4 E6 Finger
+
+TODO: rotate, coordinated with fbterm/accelerometers/fbcon
+TODO: screen real estate sharing, how does this work on postmarketos ui?
