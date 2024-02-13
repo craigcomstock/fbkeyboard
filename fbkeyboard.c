@@ -69,7 +69,7 @@ __u16 keys[][26] = {
 
 #define TOUCHCOLOR 0x4444ee
 #define BUTTONCOLOR 0x111122
-#define BACKLITCOLOR 0xff0000
+#define BACKLITCOLOR 0xffa500
 #define TERMCOLOR 0x000000
 int gap = 2;
 
@@ -129,7 +129,7 @@ void fill_rect(int x, int y, int w, int h, int color)
 void draw_char(int x, int y, char c)
 {
 	int i, j, t;
-	int color;
+	int pixel_on;
 	FT_Matrix matrix;
 	switch (rotate) {
 		case FB_ROTATE_UR:
@@ -180,16 +180,11 @@ void draw_char(int x, int y, char c)
 	}
 	for (i = 0; i < (face->glyph->bitmap.rows); i++)
 		for (j = 0; j < face->glyph->bitmap.width; j++) {
-			color =
+			pixel_on =
 			    *(face->glyph->bitmap.buffer +
 			      face->glyph->bitmap.pitch * i + j);
-			if (color) {
-				*(buf + linelength * (i + y) +
-				  (j + x) * 4) = color;
-				*(buf + linelength * (i + y) +
-				  (j + x) * 4 + 1) = color;
-				*(buf + linelength * (i + y) +
-				  (j + x) * 4 + 2) = color;
+			if (pixel_on) {
+                            *(int32_t *)(buf + linelength * (i + y) + (j + x) * 4) = BACKLITCOLOR;
 			}
 		}
 }

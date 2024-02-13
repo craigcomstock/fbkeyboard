@@ -19,3 +19,7 @@ Useful tips:
 Use stty to adjust the console size to avoid overlapping the console and the keyboard.
 # stty rows <number-of-rows>
 
+TODO
+- rework keyboard layout to be more "normal" and include F2-F12 and arrow keys/page up/down
+- integrate with gesture to show/hide this keyboard based on a non-root flag file?
+- add cmd line arg for red outline color
