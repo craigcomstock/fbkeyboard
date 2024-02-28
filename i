@@ -2,4 +2,6 @@
 # debian-12 libre (x220 tablet)
 #sudo ./fbkeyboard -d /dev/input/event3
 # alpine edge :)
-sudo ./fbkeyboard -d /dev/input/event5 -f /usr/share/fonts/dejavu/DejaVuSans.ttf
+sudo modprobe uinput
+#sudo ./fbkeyboard -d /dev/input/event5 -f /usr/share/fonts/dejavu/DejaVuSans.ttf
+sudo fbkeyboard -f /usr/share/fonts/dejavu/DejaVuSans.ttf 
